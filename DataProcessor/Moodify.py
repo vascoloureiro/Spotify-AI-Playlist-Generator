@@ -91,7 +91,7 @@ class MoodifyMerger:
             d = float(input("Danceability (0-1, default 0.6): ") or 0.6)
             e = float(input("Energy (0-1, default 0.7): ") or 0.7)
             v = float(input("Valence (0-1, default 0.6): ") or 0.6)
-            emo = input("Emoção (happy/sad/calm/energetic ou Enter p/ ignorar): ").strip().lower()
+            emo = input("Emotion (happy/sad/calm/energetic ou Enter to ignore): ").strip().lower()
 
             user_profile = {'danceability': d, 'energy': e, 'valence': v}
             user_vec = pd.DataFrame([np.zeros(len(df_features.columns))], columns=df_features.columns)

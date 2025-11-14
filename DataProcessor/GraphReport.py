@@ -1,3 +1,4 @@
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, silhouette_score
@@ -35,7 +36,6 @@ class GraphReport:
 
     def plot_feature_importance(self):
         if self.rf_model is None:
-            print("Random Forest model não fornecido.")
             return
         
         importances = pd.Series(
@@ -45,7 +45,7 @@ class GraphReport:
 
         plt.figure(figsize=(8, 5))
         sns.barplot(x=importances, y=importances.index)
-        plt.title("Importância das Features (Random Forest)")
+        plt.title("Features Importance (Random Forest)")
         plt.tight_layout()
         plt.show()
 
@@ -100,8 +100,8 @@ class GraphReport:
 
         plt.figure(figsize=(7,4))
         emo_counts.plot(kind='bar')
-        plt.title("Distribuição de emoções")
-        plt.xlabel("Emoção")
-        plt.ylabel("Contagem")
+        plt.title("Emotion Distribution")
+        plt.xlabel("Emotion")
+        plt.ylabel("Count")
         plt.tight_layout()
         plt.show()
